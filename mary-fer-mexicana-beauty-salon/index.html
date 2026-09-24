@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mary-Fer Mexicana Beauty Salon · 188 Jefferson St # B, Passaic, NJ 07055</title>
+<meta name="description" content="Mary-Fer Mexicana Beauty Salon, 188 Jefferson St # B, Passaic, NJ 07055. Mary-Fer Mexicana Beauty Salon at 188 Jefferson St in Passaic: haircuts and beauty services with a warm welcome. Walk-ins welcome. Call (973) 930-8253.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFDF4;--card:#FFFFFF;--ink:#2E2A1A;--ink-soft:#6E6449;--accent:#0F8B8D;--accent-deep:#0A6465;--accent-soft:#D7F0EF;--line:#DDE8D2;--star:#E8A93D;--head:"Bree Serif",serif;--body:"Nunito",system-ui,sans-serif;}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:var(--accent)}
+::selection{background:var(--accent-soft);color:var(--ink)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.page{display:none}
+.page.active{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+h1,h2,h3{font-family:var(--head);line-height:1.12;letter-spacing:-.3px}
+.kicker{display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.lede{font-size:1.1rem;color:var(--ink-soft);max-width:36rem;margin-bottom:26px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:999px;font-size:1rem;transition:transform .18s,box-shadow .18s,background .18s;border:0;cursor:pointer;font-family:var(--body)}
+.btn-solid{background:var(--accent);color:#fff;box-shadow:0 10px 24px -10px rgba(0,0,0,.35)}
+.btn-solid:hover{transform:translateY(-2px);filter:brightness(1.07)}
+.btn-ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.sec-head{max-width:46rem;margin:0 auto 42px;text-align:center}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:12px}
+.sec-head p{color:var(--ink-soft)}
+.strip{border-radius:22px;padding:52px 44px;color:#fff;position:relative;overflow:hidden;margin-bottom:44px;background:linear-gradient(120deg,var(--accent),var(--accent-deep))}
+.strip::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 15%,rgba(255,255,255,.22),transparent 50%)}
+.strip h2{color:#fff;font-size:clamp(2rem,4vw,3rem);position:relative;margin-bottom:10px}
+.strip p{color:rgba(255,255,255,.9);max-width:36rem;position:relative}
+.strip .kicker{color:#fff;position:relative}
+.art svg{width:100%;height:auto;display:block}
+.badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:999px;background:var(--accent-soft);color:var(--accent-deep);margin-bottom:12px}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.info-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px}
+.info-card h3{font-size:1.35rem;margin-bottom:14px}
+.info-card p{color:var(--ink-soft);margin-bottom:8px}
+.info-card a.big{font-family:var(--head);font-size:1.5rem;font-weight:700;color:var(--accent-deep);text-decoration:none}
+.info-card a.big:hover{text-decoration:underline}
+.hours-table{width:100%;border-collapse:collapse}
+.hours-table td{padding:10px 6px;border-bottom:1px dashed var(--line)}
+.hours-table td:last-child{text-align:right}
+.map-card{border-radius:18px;min-height:320px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,var(--accent-soft),var(--bg));border:1px solid var(--line);padding:24px}
+.map-pin{text-align:center;background:var(--card);padding:26px 34px;border-radius:18px;box-shadow:0 18px 40px -18px rgba(0,0,0,.25);max-width:80%}
+.map-pin strong{font-family:var(--head);font-size:1.15rem;display:block}
+.map-pin small{color:var(--ink-soft)}
+.map-pin .btn{margin-top:14px}
+.rev-src{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:0 auto 40px;max-width:640px}
+.rev-src .btn{font-size:.92rem;padding:11px 24px}
+.rev-note{text-align:center;color:var(--ink-soft);font-size:.92rem;max-width:40rem;margin:0 auto 26px}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:44px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+.rev .stars{color:var(--star);font-size:1.1rem;letter-spacing:3px;margin-bottom:10px}
+.rev p{margin-bottom:12px}
+.rev cite{font-style:normal;font-weight:700;font-size:.82rem;letter-spacing:1px;text-transform:uppercase;color:var(--accent-deep)}
+.cta-band{border-radius:22px;padding:48px;text-align:center;background:linear-gradient(120deg,var(--accent),var(--accent-deep));color:#fff;position:relative;overflow:hidden;margin-top:44px}
+.cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.22),transparent 50%)}
+.cta-band h2{color:#fff;position:relative;margin-bottom:10px}
+.cta-band p{color:rgba(255,255,255,.9);position:relative;max-width:36rem;margin:0 auto 24px}
+.cta-band .btn-solid{background:#fff;color:var(--accent-deep);position:relative}
+footer{margin-top:24px;background:var(--ink);color:#EDE4D3}
+.foot-copy{border-top:1px solid rgba(255,255,255,.14);padding:22px 0 26px;text-align:center;font-size:.9rem;color:#C9B89B}
+@media(max-width:900px){.visit-grid{grid-template-columns:1fr}.rev-grid{grid-template-columns:1fr}.strip{padding:38px 26px}}
+
+body{padding-left:272px}
+.sidenav{position:fixed;top:0;left:0;bottom:0;width:272px;background:var(--ink);color:#EDE4D3;display:flex;flex-direction:column;padding:34px 26px;z-index:60}
+.sidenav .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;margin-bottom:38px}
+.sidenav nav.main{display:flex;flex-direction:column;gap:4px}
+.sidenav nav.main a{color:#D8C9AC;text-decoration:none;font-weight:600;padding:11px 14px;border-radius:12px;font-size:1.02rem}
+.sidenav nav.main a:hover{background:rgba(255,255,255,.08);color:#fff}
+.sidenav nav.main a.active{background:var(--accent);color:#fff}
+.sidenav .call-btn{margin-top:18px;justify-content:center;background:var(--accent);color:#fff}
+.side-foot{margin-top:auto;font-size:.85rem;color:#A9926E}
+.side-foot a{color:#EDE4D3}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:10px;position:fixed;top:14px;left:14px;z-index:70;background:var(--card);border-radius:12px;border:1px solid var(--line)}
+.burger span{display:block;width:26px;height:3px;border-radius:3px;background:var(--ink);margin:5px 0}
+.logo-mark{width:44px;height:44px;flex:none;border-radius:14px;background:var(--accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:700;font-size:1.3rem}
+.brand-name{font-family:var(--head);font-weight:700;font-size:1.25rem;line-height:1.1;color:inherit}
+@media(max-width:900px){
+  body{padding-left:0}
+  .sidenav{transform:translateX(-105%);transition:transform .3s ease;width:280px}
+  .sidenav:has(nav.main.open){transform:translateX(0)}
+  .burger{display:block}
+}
+.hero{padding:70px 0 60px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5vw,3.9rem);margin-bottom:18px}
+.hero-note{font-size:.92rem;color:var(--ink-soft)}
+.art-frame{position:relative;background:linear-gradient(150deg,var(--accent-soft),var(--bg));border:1px solid var(--line);border-radius:26px;padding:44px;overflow:hidden}
+.art-tag{position:absolute;bottom:18px;left:18px;background:var(--ink);color:#fff;font-size:.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:8px 18px;border-radius:999px;transform:rotate(-2deg)}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.block{padding:64px 0}
+.zig-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:64px}
+.zig-row.flip .zig-art{order:2}
+.zig-art{background:linear-gradient(150deg,var(--accent-soft),var(--bg));border:1px solid var(--line);border-radius:22px;padding:36px}
+.zig-copy h3{font-size:1.7rem;margin-bottom:10px}
+.zig-copy p{color:var(--ink-soft)}
+@media(max-width:900px){.zig-row{grid-template-columns:1fr}.zig-row.flip .zig-art{order:0}}
+.price-note{background:var(--accent-soft);border:2px dashed var(--accent);border-radius:16px;padding:18px 24px;margin-top:34px;font-size:.95rem;color:var(--ink)}
+.ptables{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.ptable{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px}
+.ptable h3{font-size:1.4rem;margin-bottom:14px;color:var(--accent-deep)}
+.ptable table{width:100%;border-collapse:collapse}
+.ptable td{padding:12px 4px;border-bottom:1px dashed var(--line);vertical-align:top}
+.ptable td small{display:block;color:var(--ink-soft);font-weight:400}
+.ptable .pcol{text-align:right;font-family:var(--head);font-weight:700;color:var(--accent-deep);white-space:nowrap}
+@media(max-width:900px){.ptables{grid-template-columns:1fr}}
+.tabs{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.tab-btns{display:flex;flex-wrap:wrap;gap:8px;padding:18px;background:var(--accent-soft)}
+.tab-btn{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:10px 22px;font-weight:700;font-family:var(--body);cursor:pointer;color:var(--ink)}
+.tab-btn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tab-pane{display:none;padding:30px}
+.tab-pane.on{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.titem{border-bottom:1px dashed var(--line);padding:12px 4px}
+.titem strong{font-size:1.05rem}
+.titem p{color:var(--ink-soft);font-size:.94rem}
+@media(max-width:900px){.tab-pane.on{grid-template-columns:1fr}}
+.lcats{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.lcat h3{font-size:1.5rem;margin-bottom:10px;color:var(--accent-deep)}
+.li{padding:14px 4px;border-bottom:1px dashed var(--line)}
+.li-top{display:flex;align-items:baseline;gap:10px}
+.li-top strong{font-size:1.08rem}
+.li-top .dots{flex:1;border-bottom:2px dotted var(--accent);transform:translateY(-4px);opacity:.6}
+.li small{color:var(--ink-soft)}
+@media(max-width:900px){.lcats{grid-template-columns:1fr}}
+.scards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.scard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 28px;border-top:6px solid var(--accent)}
+.scard h3{font-size:1.35rem;margin-bottom:14px}
+.scard ul{list-style:none;display:grid;gap:12px}
+.scard li strong{display:block}
+.scard li span{color:var(--ink-soft);font-size:.93rem}
+@media(max-width:900px){.scards{grid-template-columns:1fr}}
+.eds{display:grid;gap:30px;max-width:800px}
+.ed{border-left:5px solid var(--accent);padding:6px 0 6px 30px}
+.ed-num{font-family:var(--head);font-size:1rem;font-weight:700;color:var(--accent);letter-spacing:2px}
+.ed h3{font-size:1.8rem;margin:6px 0 12px}
+.ed p{color:var(--ink-soft);margin-bottom:10px}
+.ed p strong{color:var(--ink)}
+
+.g-art{border-radius:18px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;min-height:230px;padding:30px}
+.g-art .art{width:52%;max-width:190px}
+.g-cap{padding:14px 6px}
+.g-cap strong{font-family:var(--head);font-size:1.08rem;display:block}
+.g-cap small{color:var(--ink-soft)}
+.soon{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.88);font-size:.66rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:999px;color:var(--ink-soft)}
+.g-strip{display:flex;gap:20px;overflow-x:auto;padding:10px 24px 26px;scroll-snap-type:x mandatory}
+.strip-item{flex:0 0 300px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.carousel{max-width:640px;margin:0 auto}
+.car-view{overflow:hidden;border-radius:20px;border:1px solid var(--line)}
+.car-track{display:flex;transition:transform .45s ease}
+.car-slide{flex:0 0 100%;background:var(--card)}
+.car-slide .g-art{border-radius:0}
+.car-slide .g-cap{padding:18px 24px}
+.car-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:16px}
+.car-btn{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:1.3rem;cursor:pointer;color:var(--ink)}
+.car-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.car-count{font-weight:700;color:var(--ink-soft)}
+.arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.arch-tile .g-art.arch{border-radius:150px 150px 18px 18px;min-height:300px}
+@media(max-width:900px){.arch-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.arch-grid{grid-template-columns:1fr}}
+.masonry{columns:3;column-gap:20px}
+.m-item{break-inside:avoid;margin-bottom:20px;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.m-item .g-art{border-radius:0}
+@media(max-width:900px){.masonry{columns:2}}
+@media(max-width:600px){.masonry{columns:1}}
+
+.foot-min{text-align:center;padding:44px 0 8px}
+.foot-min .foot-tag{font-family:var(--head);font-size:1.3rem;color:#fff;margin-bottom:8px}
+.foot-min p{color:#C9B89B}
+.foot-min a{color:#fff}
+.foot-big{padding:56px 0 10px}
+.foot-bigname{font-family:var(--head);font-weight:700;font-size:clamp(2.4rem,7vw,4.6rem);color:#fff;line-height:1;letter-spacing:-1px;margin-bottom:18px}
+.foot-bigrow{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;color:#C9B89B}
+.foot-bigrow a{color:#fff;text-decoration:none}
+.foot-bigrow a:hover{text-decoration:underline}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;padding:52px 0 12px}
+.foot-grid h4{font-family:var(--head);color:#fff;font-size:1.1rem;margin-bottom:12px}
+.foot-grid p,.foot-grid a{color:#C9B89B;font-size:.94rem;text-decoration:none}
+.foot-grid a:hover{color:#fff}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<aside class="sidenav">
+  <a class="brand" href="#home" data-page="home" aria-label="Mary-Fer Mexicana Beauty Salon, home"><span class="logo-mark" aria-hidden="true">M</span><span class="brand-name">Mary-Fer</span></a>
+  <nav class="main" id="mainNav" aria-label="Main navigation">
+      <a href="#home" data-page="home" class="active" aria-current="page">Home</a>
+      <a href="#services" data-page="services">Services</a>
+      <a href="#gallery" data-page="gallery">Gallery</a>
+      <a href="#reviews" data-page="reviews">Reviews</a>
+      <a href="#visit" data-page="visit">Visit Us</a>
+      <a class="call-btn" href="tel:+19739308253">Call (973) 930-8253</a>
+  </nav>
+  <div class="side-foot"><p>188 Jefferson St # B, Passaic, NJ 07055</p><p><a href="tel:+19739308253">(973) 930-8253</a></p></div>
+</aside>
+<section class="page active" id="page-home">
+<div class="hero"><div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Jefferson St · Passaic, NJ</span>
+      <h1>A friendly chair on Jefferson St.</h1>
+      <p class="lede">Mary-Fer Mexicana Beauty Salon at 188 Jefferson St in Passaic: haircuts and beauty services with a warm welcome. Walk-ins welcome.</p>
+      <div class="cta-row">
+      <a class="btn btn-solid" href="#services" data-page="services">See Services</a>
+      <a class="btn btn-ghost" href="tel:+19739308253">Call (973) 930-8253</a>
+    </div>
+      <p class="hero-note">Walk-ins welcome. Se habla español.</p>
+    </div>
+    <div class="hero-art"><div class="art-frame"><div class="art"><svg viewBox="0 0 120 120" role="img" aria-label="Comb illustration"><rect x="18" y="30" width="84" height="16" rx="8" fill="#0F8B8D"/><path d="M28 46 v44 M40 46 v44 M52 46 v44 M64 46 v44 M76 46 v44 M88 46 v44" stroke="#0F8B8D" stroke-width="6" stroke-linecap="round"/><circle cx="60" cy="60" r="52" fill="none" stroke="#D7F0EF" stroke-width="3" opacity=".5"/></svg></div><div class="art-tag">Cuts · Walk-ins</div></div></div>
+  </div></div><section class="block"><div class="wrap">
+  <div class="sec-head reveal"><span class="kicker">Why Mary-Fer</span><h2>Neighborhood warmth, beautiful hair</h2><p>A family-friendly salon where walk-ins are welcome and every client gets personal attention.</p></div>
+  <div class="zig-row reveal"><div class="zig-art"><div class="art"><svg viewBox="0 0 120 120" role="img" aria-label="Comb illustration"><rect x="18" y="30" width="84" height="16" rx="8" fill="#0F8B8D"/><path d="M28 46 v44 M40 46 v44 M52 46 v44 M64 46 v44 M76 46 v44 M88 46 v44" stroke="#0F8B8D" stroke-width="6" stroke-linecap="round"/><circle cx="60" cy="60" r="52" fill="none" stroke="#D7F0EF" stroke-width="3" opacity=".5"/></svg></div></div>
+    <div class="zig-copy"><span class="badge">✂️</span><h3>Haircuts</h3><p>Fresh cuts for women, men, and kids.</p></div></div><div class="zig-row flip reveal"><div class="zig-art"><div class="art"><svg viewBox="0 0 120 120" role="img" aria-label="Comb illustration"><rect x="18" y="30" width="84" height="16" rx="8" fill="#0F8B8D"/><path d="M28 46 v44 M40 46 v44 M52 46 v44 M64 46 v44 M76 46 v44 M88 46 v44" stroke="#0F8B8D" stroke-width="6" stroke-linecap="round"/><circle cx="60" cy="60" r="52" fill="none" stroke="#D7F0EF" stroke-width="3" opacity=".5"/></svg></div></div>
+    <div class="zig-copy"><span class="badge">🚶</span><h3>Walk-ins welcome</h3><p>No appointment? Come on in, we will fit you in.</p></div></div><div class="zig-row reveal"><div class="zig-art"><div class="art"><svg viewBox="0 0 120 120" role="img" aria-label="Comb illustration"><rect x="18" y="30" width="84" height="16" rx="8" fill="#0F8B8D"/><path d="M28 46 v44 M40 46 v44 M52 46 v44 M64 46 v44 M76 46 v44 M88 46 v44" stroke="#0F8B8D" stroke-width="6" stroke-linecap="round"/><circle cx="60" cy="60" r="52" fill="none" stroke="#D7F0EF" stroke-width="3" opacity=".5"/></svg></div></div>
+    <div class="zig-copy"><span class="badge">💨</span><h3>Styling</h3><p>Blowouts and everyday styling.</p></div></div><div class="zig-row flip reveal"><div class="zig-art"><div class="art"><svg viewBox="0 0 120 120" role="img" aria-label="Comb illustration"><rect x="18" y="30" width="84" height="16" rx="8" fill="#0F8B8D"/><path d="M28 46 v44 M40 46 v44 M52 46 v44 M64 46 v44 M76 46 v44 M88 46 v44" stroke="#0F8B8D" stroke-width="6" stroke-linecap="round"/><circle cx="60" cy="60" r="52" fill="none" stroke="#D7F0EF" stroke-width="3" opacity=".5"/></svg></div></div>
+    <div class="zig-copy"><span class="badge">🗣️</span><h3>Se habla español</h3><p>Bilingual, friendly service.</p></div></div>
+</div></section>
+</section>
+<section class="page" id="page-services">
+<div class="wrap"><div style="height:44px"></div><div class="strip"><span class="kicker">What we do</span><h2>Services</h2>
+  <p>Hair and beauty services. Call for pricing.</p></div>
+  <div class="scards"><div class="scard reveal"><h3>Hair</h3><ul><li><strong>Haircut</strong> <span>A fresh, flattering cut.</span></li>
+<li><strong>Blowout</strong> <span>Smooth and finished.</span></li>
+<li><strong>Wash and set</strong> <span>Classic styling.</span></li></ul></div><div class="scard reveal"><h3>Color</h3><ul><li><strong>All-over color</strong> <span>Rich, even color.</span></li>
+<li><strong>Root touch-up</strong> <span>Seamless regrowth coverage.</span></li>
+<li><strong>Highlights</strong> <span>Brightness and dimension.</span></li></ul></div><div class="scard reveal"><h3>More</h3><ul><li><strong>Styling for events</strong> <span>Polished looks for special days.</span></li>
+<li><strong>Kids cuts</strong> <span>Friendly cuts for little ones.</span></li></ul></div></div><div class="price-note reveal"><strong>Good to know:</strong> Call (973) 930-8253 for current pricing.</div><div style="height:56px"></div></div>
+</section>
+<section class="page" id="page-gallery">
+<div class="wrap"><div style="height:44px"></div><div class="strip"><span class="kicker">The lookbook</span><h2>Gallery</h2>
+  <p>Friendly results from our chairs. Real photos coming soon.</p></div>
+  <div class="carousel reveal"><div class="car-view"><div class="car-track" id="carTrack"><div class="car-slide"><div class="g-art" style="background:linear-gradient(140deg,#D7F0EF,#A9DCD9)"><div class="art"><svg viewBox="0 0 120 120" role="img" aria-label="Scissors illustration"><circle cx="60" cy="60" r="52" fill="#fff" opacity=".35"/><circle cx="38" cy="88" r="10" fill="none" stroke="#0F8B8D" stroke-width="6"/><circle cx="82" cy="88" r="10" fill="none" stroke="#0F8B8D" stroke-width="6"/><path d="M44 80 L74 34 M76 80 L46 34" stroke="#0F8B8D" stroke-width="6" stroke-linecap="round"/><circle cx="60" cy="58" r="5" fill="#0F8B8D"/></svg></div><span class="soon">Photo soon</span></div>
+      <div class="g-cap"><strong>Fresh cut</strong><small>Jefferson St style</small></div></div>
+<div class="car-slide"><div class="g-art" style="background:linear-gradient(140deg,#E4F5F3,#BCE3DF)"><div class="art"><svg viewBox="0 0 120 120" role="img" aria-label="Hair dryer illustration"><path d="M20 52 h52 l14 -18 h12 a6 6 0 016 6 v40 a6 6 0 01-6 6 h-12 l-14 -18 z" fill="#0F8B8D"/><rect x="34" y="66" width="14" height="34" rx="7" fill="#0A6465"/><path d="M104 40 q14 8 0 20 M104 60 q14 8 0 20" stroke="#0A6465" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div><span class="soon">Photo soon</span></div>
+      <div class="g-cap"><strong>Smooth blowout</strong><small>Soft and bouncy</small></div></div>
+<div class="car-slide"><div class="g-art" style="background:linear-gradient(140deg,#D7F0EF,#93D2CE)"><div class="art"><svg viewBox="0 0 120 120" role="img" aria-label="Sparkle illustration"><path d="M60 14 l9 34 34 9 -34 9 -9 34 -9 -34 -34 -9 34 -9 z" fill="#0F8B8D"/><path d="M92 78 l5 18 18 5 -18 5 -5 18 -5 -18 -18 -5 18 -5 z" fill="#E8A93D"/><circle cx="32" cy="88" r="7" fill="#E8A93D"/></svg></div><span class="soon">Photo soon</span></div>
+      <div class="g-cap"><strong>Color refresh</strong><small>Rich tone</small></div></div></div></div>
+    <div class="car-nav"><button class="car-btn" id="carPrev" aria-label="Previous">&#8592;</button><span class="car-count" id="carCount"></span><button class="car-btn" id="carNext" aria-label="Next">&#8594;</button></div></div>
+  <div class="price-note reveal" style="margin:34px 0 56px"><strong>Coming soon:</strong> real photos of our work. The illustrations above are artistic previews the owner can swap for actual photos.</div></div>
+  <script>
+  (function(){var tr=document.getElementById("carTrack");var n=tr.children.length;var i=0;var c=document.getElementById("carCount");
+  function up(){tr.style.transform="translateX(-"+(i*100)+"%)";c.textContent=(i+1)+" / "+n;}
+  document.getElementById("carPrev").addEventListener("click",function(){i=(i-1+n)%n;up();});
+  document.getElementById("carNext").addEventListener("click",function(){i=(i+1)%n;up();});up();})();
+  </script>
+</section>
+<section class="page" id="page-reviews">
+<div class="wrap"><div style="height:44px"></div>
+  <div class="strip"><span class="kicker">Word of mouth</span><h2>Reviews</h2>
+    <p>Jefferson St neighbors keep coming back.</p></div>
+  <p class="rev-note">Review themes below are paraphrased from public feedback. Open the source to read current reviews and ratings.</p>
+  <div class="rev-src reveal"><a class="btn btn-solid" href="https://www.google.com/maps/place/?q=place_id:ChIJieQL6NL-wokR-gGpgLRHB1Y" target="_blank" rel="noopener">See reviews on Google</a><a class="btn btn-ghost" href="https://reviews.birdeye.com/mary-fer-mexicana-beauty-salon-170119229100906" target="_blank" rel="noopener">Read reviews on Birdeye</a></div>
+  <div class="rev-grid"><div class="rev reveal"><div class="stars">★★★★★</div>
+    <p>"Friendly service and a great cut. Walked in and was seated quickly."</p><cite>via Google</cite></div>
+<div class="rev reveal"><div class="stars">★★★★☆</div>
+    <p>"Good neighborhood salon, fair prices."</p><cite>via Birdeye</cite></div></div>
+  <div class="cta-band reveal"><h2>Been in our chair?</h2>
+    <p>Tell your neighbors about it. A quick review means the world to a local salon like ours.</p>
+    <a class="btn btn-solid" href="https://www.google.com/maps/place/?q=place_id:ChIJieQL6NL-wokR-gGpgLRHB1Y" target="_blank" rel="noopener">Leave a Google review</a></div>
+  <div style="height:56px"></div></div>
+</section>
+<section class="page" id="page-visit">
+<div class="wrap"><div style="height:44px"></div>
+  <div class="strip"><span class="kicker">Find us</span><h2>Visit Us</h2>
+    <p>At 188 Jefferson St, suite B, in Passaic.</p></div>
+  <div class="visit-grid">
+    <div class="info-card reveal"><h3>Find us</h3>
+      <p><strong>Mary-Fer Mexicana Beauty Salon</strong><br>Mary-Fer Mexicana Beauty Salon, 188 Jefferson St # B, Passaic, NJ 07055</p>
+      <p>We are in suite B at 188 Jefferson St. Se habla español.</p></div>
+    <div class="info-card reveal"><h3>Call us</h3>
+      <p>Questions, appointments, walk-in availability:</p>
+      <a class="big" href="tel:+19739308253">(973) 930-8253</a></div>
+  </div>
+  <div class="visit-grid">
+    <div class="info-card reveal"><h3>Hours</h3><p>Our hours change with the season and the appointment book. The fastest way to plan your visit:</p><a class="big" href="tel:+19739308253">(973) 930-8253</a><p style="margin-top:10px">Call for current hours and same-week availability.</p></div>
+    <div class="map-card reveal"><div class="map-pin">
+      <strong>188 Jefferson St # B, Passaic, NJ 07055</strong><br>
+      <a class="btn btn-solid" href="https://www.google.com/maps/place/?q=place_id:ChIJieQL6NL-wokR-gGpgLRHB1Y" target="_blank" rel="noopener">Get Directions</a>
+    </div></div>
+  </div>
+  <div style="height:56px"></div></div>
+</section>
+<footer><div class="wrap foot-grid">
+  <div><h4>Mary-Fer</h4><p>Your friendly neighborhood salon on Jefferson St.</p></div>
+  <div><h4>Visit</h4><p>Mary-Fer Mexicana Beauty Salon, 188 Jefferson St # B, Passaic, NJ 07055<br><a href="tel:+19739308253">(973) 930-8253</a></p></div>
+  <div><h4>Explore</h4><p><a href="#services" data-page="services">Services</a><br><a href="#gallery" data-page="gallery">Gallery</a><br><a href="#reviews" data-page="reviews">Reviews</a><br><a href="#visit" data-page="visit">Visit Us</a></p></div>
+</div><div class="foot-copy">© Mary-Fer Mexicana Beauty Salon</div></footer>
+<script>
+(function(){
+  "use strict";
+
+  var PAGES = ["home", "services", "gallery", "reviews", "visit"];
+  var nav = document.getElementById("mainNav");
+  var burger = document.getElementById("burger");
+
+  function cleanHash(){
+    return (location.hash || "").replace(/^#\/?/, "").split("?")[0];
+  }
+
+  function closeMenu(){
+    if(nav){ nav.classList.remove("open"); }
+    if(burger){ burger.setAttribute("aria-expanded", "false"); }
+  }
+
+  function navigateTo(page, updateHash){
+    if(PAGES.indexOf(page) === -1){ page = "home"; }
+
+    var sections = document.querySelectorAll(".page");
+    for(var i = 0; i < sections.length; i++){
+      sections[i].classList.toggle("active", sections[i].id === "page-" + page);
+    }
+
+    var links = document.querySelectorAll("nav.main a[data-page]");
+    for(var j = 0; j < links.length; j++){
+      var on = links[j].getAttribute("data-page") === page;
+      links[j].classList.toggle("active", on);
+      if(on){ links[j].setAttribute("aria-current", "page"); }
+      else { links[j].removeAttribute("aria-current"); }
+    }
+
+    if(updateHash !== false && location.hash !== "#" + page){
+      location.hash = "#" + page;
+    }
+
+    closeMenu();
+    window.scrollTo(0, 0);
+    observeReveals();
+  }
+
+  document.addEventListener("click", function(e){
+    var el = e.target.closest("a[data-page], button[data-page]");
+    if(!el) return;
+    e.preventDefault();
+    navigateTo(el.getAttribute("data-page"));
+  });
+
+  window.addEventListener("hashchange", function(){
+    navigateTo(cleanHash() || "home");
+  });
+
+  if(burger && nav){
+    burger.addEventListener("click", function(){
+      var open = nav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+
+  var track = document.getElementById("marqueeTrack");
+  if(track){ track.innerHTML += track.innerHTML; }
+
+  var io = null;
+  if("IntersectionObserver" in window){
+    io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, {threshold:.12});
+  }
+  function observeReveals(){
+    if(!io){ return; }
+    var els = document.querySelectorAll(".page.active .reveal:not(.in)");
+    for(var m = 0; m < els.length; m++){ io.observe(els[m]); }
+  }
+
+  navigateTo(cleanHash() || "home", false);
+})();
+</script>
+</body>
+</html>

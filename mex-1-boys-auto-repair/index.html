@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mex 1 Boys Auto Repair | Auto repair shop</title>
+<meta name="description" content="Mex 1 Boys Auto Repair, Auto repair shop. Call (201) 420-1154.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{height:100%}
+body{min-height:100vh;background:#0A0F10;color:#E9FFFC;font-family:'Inter',sans-serif;display:flex;flex-direction:column;line-height:1.6}
+main{flex:1 0 auto}
+footer{margin-top:auto;background:#000;color:#8FB8B2;text-align:center;padding:22px 16px;font-size:14px;letter-spacing:1px}
+.page{display:none}
+.page.active{display:block}
+a{color:#00E5CC}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.hfont{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.05;letter-spacing:.5px;text-transform:uppercase}
+.btn{display:inline-block;padding:16px 34px;border-radius:28px;font-weight:800;text-decoration:none;text-transform:uppercase;letter-spacing:1px;font-size:15px;border:2px solid #00E5CC;cursor:pointer}
+.btn.primary{background:#00E5CC;color:#0a0a0a}
+.btn.primary:hover{background:#A6FF00;border-color:#A6FF00}
+.btn.ghost{background:transparent;color:#00E5CC}
+.btn.ghost:hover{background:#00E5CC;color:#0a0a0a}
+.badge{display:inline-block;background:#00E5CC;color:#0a0a0a;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;padding:6px 14px;border-radius:28px;margin-bottom:18px}
+#site-header{background:#0A0F10;border-bottom:3px solid #00E5CC;position:sticky;top:0;z-index:50}
+.topbar{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:16px 24px}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;text-transform:uppercase;color:#E9FFFC;text-decoration:none}
+.brand em{font-style:normal;color:#00E5CC}
+.nav{display:flex;gap:6px;align-items:center}
+.nav-link{color:#E9FFFC;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:1px;padding:10px 16px;border-radius:28px}
+.nav-link:hover{background:#10201F;color:#00E5CC}
+.nav-link.active{background:#00E5CC;color:#0a0a0a}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:10px}
+.menu-btn span{display:block;width:28px;height:3px;background:#00E5CC;margin:6px 0}
+.hero{padding:96px 0 72px;text-align:left;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-120px;top:-120px;width:420px;height:420px;background:#00E5CC;opacity:.08;transform:rotate(24deg)}
+.hero h1{font-size:clamp(48px,8vw,110px);margin:10px 0 20px}
+.hero h1 span{color:#00E5CC}
+.lede{font-size:20px;color:#8FB8B2;max-width:640px;margin-bottom:34px}
+.cta-row{display:flex;gap:16px;flex-wrap:wrap}
+.info-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.tile{background:#10201F;border:1px solid #152A28;border-top:4px solid #00E5CC;border-radius:28px;padding:28px}
+.tile h3{font-size:16px;color:#00E5CC;margin-bottom:10px}
+.tile p{color:#8FB8B2;font-size:15px}
+.tile a{color:#E9FFFC;font-weight:700;text-decoration:none}
+.ticker{background:#00E5CC;color:#0a0a0a;overflow:hidden;white-space:nowrap;padding:14px 0;font-weight:900;text-transform:uppercase;letter-spacing:2px}
+.ticker span{display:inline-block;padding:0 28px;animation:tick 22s linear infinite}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.section{padding:84px 0}
+.section h2{font-size:clamp(34px,5vw,64px);margin-bottom:14px}
+.section .sub{color:#8FB8B2;margin-bottom:44px;max-width:640px}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px}
+.svc{background:#10201F;border:1px solid #152A28;border-radius:28px;padding:28px;transition:transform .2s}
+.svc:hover{transform:translateY(-6px);border-color:#00E5CC}
+.svc-n{font-family:'Space Grotesk',sans-serif;font-size:34px;color:#00E5CC;display:block;margin-bottom:12px}
+.svc-t{font-weight:700;font-size:17px}
+.panel{background:#10201F;border:1px solid #152A28;border-radius:28px;padding:48px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.form .field{margin-bottom:18px}
+.form label{display:block;font-weight:700;margin-bottom:8px;font-size:14px;text-transform:uppercase;letter-spacing:1px}
+.form input,.form textarea{width:100%;background:#000;border:2px solid #152A28;border-radius:28px;color:#E9FFFC;padding:14px 16px;font-size:16px;font-family:inherit}
+.form input:focus,.form textarea:focus{outline:none;border-color:#00E5CC}
+.form-note{margin-top:16px;color:#8FB8B2;font-size:14px}
+.form-sent{background:#10201F;border:2px solid #00E5CC;border-radius:28px;padding:36px}
+.form-sent h3{margin-bottom:10px}
+.contact-cards{display:grid;gap:24px;margin-bottom:44px}
+.review-cta{text-align:center}
+.review-cta .btn{font-size:18px;padding:20px 48px}
+@media(max-width:860px){
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;background:#000;flex-direction:column;align-items:stretch;padding:12px 24px 20px;border-bottom:3px solid #00E5CC}
+  #site-header.menu-open .nav{display:flex}
+  .menu-btn{display:block}
+  .info-tiles{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .hero{padding:64px 0 48px}
+  .section{padding:56px 0}
+}
+
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Mex 1 Boys Auto Repair", "address": "Mex 1 Boys Auto Repair, 318 Manhattan Ave, Jersey City, NJ 07307", "telephone": "(201) 420-1154"}</script>
+<style>html{height:100%}body{min-height:100vh}</style></head>
+<body>
+<script>
+var PAGES=['home','services','about','reviews','contact'];
+var TITLES={"home": "Home", "services": "Services", "about": "About Us", "reviews": "Reviews", "contact": "Contact"};
+function pageFromHash(){var h=window.location.hash.replace('#','').toLowerCase();return PAGES.indexOf(h)>-1?h:'home';}
+function showPage(p){
+  var secs=document.querySelectorAll('.page');
+  for(var i=0;i<secs.length;i++){secs[i].classList.toggle('active',secs[i].id==='page-'+p);}
+  var links=document.querySelectorAll('[data-nav]');
+  for(var j=0;j<links.length;j++){links[j].classList.toggle('active',links[j].getAttribute('data-nav')===p);}
+  document.title=TITLES[p]+' | '+"Mex 1 Boys Auto Repair";
+  window.scrollTo(0,0);
+}
+function navigateTo(p){
+  if(PAGES.indexOf(p)<0){p='home';}
+  if(window.location.hash!=='#'+p){window.history.pushState({page:p},'','#'+p);}
+  showPage(p);
+  closeMenu();
+  return false;
+}
+window.addEventListener('popstate',function(){showPage(pageFromHash());});
+window.addEventListener('hashchange',function(){showPage(pageFromHash());});
+function toggleMenu(){
+  var h=document.getElementById('site-header');
+  var open=h.classList.toggle('menu-open');
+  var b=document.getElementById('menu-btn');
+  if(b){b.setAttribute('aria-expanded',open?'true':'false');}
+}
+function closeMenu(){
+  var h=document.getElementById('site-header');
+  if(h){h.classList.remove('menu-open');}
+  var b=document.getElementById('menu-btn');
+  if(b){b.setAttribute('aria-expanded','false');}
+}
+document.addEventListener('click',function(e){
+  var t=(e.target&&e.target.closest)?e.target.closest('[data-nav]'):null;
+  if(t){e.preventDefault();navigateTo(t.getAttribute('data-nav'));}
+});
+document.addEventListener('DOMContentLoaded',function(){
+  showPage(pageFromHash());
+  var mb=document.getElementById('menu-btn');
+  if(mb){mb.addEventListener('click',function(ev){ev.stopPropagation();toggleMenu();});}
+  var form=document.getElementById('contact-form');
+  if(form){
+    form.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      form.hidden=true;
+      var s=document.getElementById('form-sent');
+      if(s){s.hidden=false;}
+      window.scrollTo(0,0);
+    });
+  }
+});
+</script>
+<header id="site-header"><div class="topbar"><a class="brand" href="#home" data-nav="home">Mex 1 Boys Auto Repair</a><button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="nav"><a href="#home" data-nav="home" class="nav-link">Home</a><a href="#services" data-nav="services" class="nav-link">Services</a><a href="#about" data-nav="about" class="nav-link">About</a><a href="#reviews" data-nav="reviews" class="nav-link">Reviews</a><a href="#contact" data-nav="contact" class="nav-link">Contact</a></nav></div></header><main><section class="page" id="page-home"><div class="hero"><div class="wrap"><span class="badge">Auto repair shop in Jersey City</span><h1>Mex 1 Boys Auto Repair <span>Does It Right</span></h1><p class="lede">Bold, honest auto repair shop work in Jersey City. One call gets a real person who can tell you exactly what your vehicle needs.</p><div class="cta-row"><a class="btn primary" href="tel:+12014201154">Call (201) 420-1154</a><a class="btn ghost" href="#services" data-nav="services">View Services</a></div><div class="info-tiles"><div class="tile"><h3>Call Us</h3><p><a href="tel:+12014201154">(201) 420-1154</a></p></div><div class="tile"><h3>Find Us</h3><p>Mex 1 Boys Auto Repair, 318 Manhattan Ave, Jersey City, NJ 07307</p></div><div class="tile"><h3>What We Do</h3><p>Auto repair shop with 8 core services. See the full list.</p></div></div></div></div><div class="ticker"><div><span>Auto repair shop in Jersey City</span><span>Call (201) 420-1154</span><span>Mex 1 Boys Auto Repair</span><span>Call (201) 420-1154</span><span>Auto repair shop in Jersey City</span><span>Call (201) 420-1154</span><span>Mex 1 Boys Auto Repair</span><span>Call (201) 420-1154</span><span>Auto repair shop in Jersey City</span><span>Call (201) 420-1154</span><span>Mex 1 Boys Auto Repair</span><span>Call (201) 420-1154</span></div></div></section><section class="page" id="page-services"><div class="section"><div class="wrap"><span class="badge">Sample services, call to confirm</span><h2>Services</h2><p class="sub">The work we are known for. Availability and pricing vary, so call (201) 420-1154 to confirm before you come in.</p><div class="svc-grid"><div class="svc"><span class="svc-n">01</span><span class="svc-t">Engine diagnostics</span></div><div class="svc"><span class="svc-n">02</span><span class="svc-t">Brake repair</span></div><div class="svc"><span class="svc-n">03</span><span class="svc-t">Oil and fluid service</span></div><div class="svc"><span class="svc-n">04</span><span class="svc-t">Suspension and steering</span></div><div class="svc"><span class="svc-n">05</span><span class="svc-t">Battery and electrical systems</span></div><div class="svc"><span class="svc-n">06</span><span class="svc-t">Exhaust service</span></div><div class="svc"><span class="svc-n">07</span><span class="svc-t">Pre-purchase inspections</span></div><div class="svc"><span class="svc-n">08</span><span class="svc-t">Scheduled maintenance</span></div></div><div class="cta-row" style="margin-top:44px"><a class="btn primary" href="tel:+12014201154">Call to Book</a></div></div></div></section><section class="page" id="page-about"><div class="section"><div class="wrap"><span class="badge">About us</span><h2>Built On Wrench Time</h2><div class="two"><div class="panel"><p>Mex 1 Boys Auto Repair is an auto repair shop located at Mex 1 Boys Auto Repair, 318 Manhattan Ave, Jersey City, NJ 07307. We keep it simple: show up, do the work right, and charge fair.</p><p style="margin-top:16px;color:#8FB8B2">Details on this page are general. For anything specific, call <a href="tel:+12014201154">(201) 420-1154</a> to confirm.</p></div><div class="panel" style="border-top:6px solid #00E5CC"><h3>Why drivers pick us</h3><p style="margin-top:12px">Straight answers. Real timelines. Work we stand behind. Call and judge for yourself.</p><div class="cta-row" style="margin-top:24px"><a class="btn ghost" href="#contact" data-nav="contact">Contact Us</a></div></div></div></div></div></section><section class="page" id="page-reviews"><div class="section"><div class="wrap"><div class="panel review-cta"><span class="badge">Reviews</span><h2>What Drivers Say</h2><p class="sub" style="margin-left:auto;margin-right:auto">We do not publish reviews on this page. Read real customer reviews for Mex 1 Boys Auto Repair on its Google Maps listing.</p><a class="btn primary" href="https://www.google.com/maps/place/?q=place_id:ChIJ3-rbzRdXwokR8hkr_t6ZlRM" target="_blank" rel="noopener">See Reviews on Google Maps</a></div></div></div></section><section class="page" id="page-contact"><div class="section"><div class="wrap"><span class="badge">Contact</span><h2>Get In Touch</h2><p class="sub">Fastest way to reach us is a phone call.</p><div class="contact-cards"><div class="tile"><h3>Call</h3><p><a href="tel:+12014201154">(201) 420-1154</a></p></div><div class="tile"><h3>Visit</h3><p>Mex 1 Boys Auto Repair, 318 Manhattan Ave, Jersey City, NJ 07307<br><a href="https://www.google.com/maps/place/?q=place_id:ChIJ3-rbzRdXwokR8hkr_t6ZlRM" target="_blank" rel="noopener">Get directions</a></p></div></div><form id="contact-form" class="form" novalidate><div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div><div class="field"><label for="f-phone">Phone number</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div><div class="field"><label for="f-msg">How can we help?</label><textarea id="f-msg" name="message" rows="4" required></textarea></div><button class="btn primary" type="submit">Send Request</button><p class="form-note">This form does not send online. To reach us right now, please call <a href="tel:+12014201154">(201) 420-1154</a>.</p></form><div class="form-sent" id="form-sent" hidden><h3>Thanks for reaching out.</h3><p>This form does not send online, so nothing was transmitted. Please call <a href="tel:+12014201154">(201) 420-1154</a> and we will help you directly.</p><button class="btn ghost" type="button" onclick="document.getElementById('contact-form').hidden=false;this.parentElement.hidden=true;">Back to form</button></div></div></div></section></main><footer>© Mex 1 Boys Auto Repair</footer>
+<script>
+/* sticky-footer-fix-v1 */
+(function(){function s(){var f=document.querySelector('footer');if(!f||f.getBoundingClientRect().bottom>=window.innerHeight-2)return;var b=document.body;b.style.minHeight='100vh';b.style.display='flex';b.style.flexDirection='column';var e=f;while(e&&e!==b){if(e===f){e.style.marginTop='auto';}else{e.style.display='flex';e.style.flexDirection='column';e.style.flex='1 0 auto';}e=e.parentElement;}}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',s);}else{s();}
+window.addEventListener('hashchange',function(){setTimeout(s,60);});
+window.addEventListener('popstate',function(){setTimeout(s,60);});
+var _n=window.navigateTo;if(typeof _n==='function'){window.navigateTo=function(){var r=_n.apply(this,arguments);setTimeout(s,60);return r;};}})();
+</script></body>
+</html>
