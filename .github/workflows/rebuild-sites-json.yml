@@ -1,0 +1,41 @@
+name: Rebuild sites.json
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: rebuild-sites-json
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild catalog
+        run: python3 scripts/rebuild-sites-json.py
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- sites.json sitedesk/data/total.json; then
+            echo "No catalog changes"
+            exit 0
+          fi
+          git config user.name "Not Ai"
+          git config user.email "iamnottaiii@gmail.com"
+          git add sites.json sitedesk/data/total.json
+          git commit -m "chore: rebuild sites.json"
+          git push
