@@ -1,0 +1,66 @@
+name: Release delete
+# Bulk-deletes files from the repo tree with a plain git push
+# (no Git Data API, which times out on this repo's 345k-file tree).
+# Convention: publishing release <tag> (tag must start with "delete-")
+# with body "drive:<fileid>" downloads that Drive file (a zip containing
+# __delete__.txt, one repo-relative path per line, shared anyone-with-link),
+# deletes those paths, commits, and pushes. Serialized via concurrency group.
+on:
+  release:
+    types: [published]
+concurrency:
+  group: release-ingest
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  delete:
+    if: startsWith(github.event.release.tag_name, 'delete-')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Download manifest from Drive
+        run: |
+          BODY="${{ github.event.release.body }}"
+          case "$BODY" in
+            drive:*) ID="${BODY#drive:}" ;;
+            *) echo "release body must be drive:<fileid>, got: $BODY"; exit 1 ;;
+          esac
+          pip install -q gdown
+          gdown "$ID" -O /tmp/manifest.zip
+          ls -la /tmp/manifest.zip
+      - name: Delete listed paths
+        run: |
+          unzip -q -o /tmp/manifest.zip -d /tmp/manifest
+          test -f /tmp/manifest/__delete__.txt || { echo "__delete__.txt missing"; exit 1; }
+          python3 - <<'EOF'
+          import os
+          ws = os.environ["GITHUB_WORKSPACE"]
+          paths = [l.rstrip("\n") for l in open("/tmp/manifest/__delete__.txt") if l.strip()]
+          print("manifest paths:", len(paths))
+          missing = 0
+          for p in paths:
+              fp = os.path.join(ws, p)
+              if os.path.isfile(fp):
+                  os.remove(fp)
+              else:
+                  missing += 1
+          print("removed:", len(paths) - missing, "already gone:", missing)
+          EOF
+      - name: Commit and push
+        run: |
+          TAG="${{ github.event.release.tag_name }}"
+          git config user.name "Not Ai"
+          git config user.email "iamnottaiii@gmail.com"
+          git add -A
+          N=$(git diff --cached --name-only | wc -l)
+          if [ "$N" -eq 0 ]; then echo "nothing to delete"; exit 0; fi
+          git commit -qm "delete $TAG: $N files"
+          git push origin HEAD:main
+      - name: Delete processed release
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release delete "${{ github.event.release.tag_name }}" --yes --cleanup-tag --repo "${{ github.repository }}"
